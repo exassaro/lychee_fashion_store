@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 340 100% 45%; /* #E8004C */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96.5%; /* #F6F6F6 */
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 96.5%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 97 77% 45%; /* #5CC91A */
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 72% 46%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 86%;
+    --ring: 340 100% 45%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background font-sans text-ink antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-heading {
+    @apply font-slab font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply font-slab text-2xl font-bold text-ink sm:text-3xl;
+  }
+}
+
+@layer utilities {
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .pb-safe {
+    padding-bottom: max(env(safe-area-inset-bottom), 0px);
+  }
+}
